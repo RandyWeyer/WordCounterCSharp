@@ -62,6 +62,14 @@ namespace WordCounter.Tests
       Assert.AreEqual(0, testWordCounter.CountWordsTest(Word, InputStringArray));
     }
     [TestMethod]
+    public void NoMatches_Zero()
+    {
+      string Word = "outside";
+      string[] InputStringArray = new string[] {"a","an","in","inside"};
+      WordCounter testWordCounter = new WordCounter();
+      Assert.AreEqual(0, testWordCounter.CountWordsTest(Word, InputStringArray));
+    }
+    [TestMethod]
     public void IncorrectInputNumber_Zero()
     {
       string Word = "5";
