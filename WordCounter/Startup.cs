@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace WordCounter
+namespace WordCounterApp
 {
     public class Startup
     {
@@ -25,6 +25,7 @@ namespace WordCounter
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
             app.UseMvc(routes =>
             {
