@@ -16,7 +16,10 @@ namespace WordCounter
           string LowerCaseStringArray = InputStringArray[i].ToLower();
           if(LowerCaseStringArray.Contains(LowerCaseWord))
           {
-            WordCounter++;
+            if(LowerCaseStringArray==LowerCaseWord)
+            {
+              WordCounter++;
+            }
           }
         }
         return WordCounter;

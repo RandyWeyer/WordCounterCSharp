@@ -25,7 +25,7 @@ namespace WordCounter.Tests
     public void MatchTwoLetters_One()
     {
       string Word = "in";
-      string[] InputStringArray = new string[] {"a","in"};
+      string[] InputStringArray = new string[] {"an","in"};
       WordCounter testWordCounter = new WordCounter();
       Assert.AreEqual(1, testWordCounter.CountWordsTest(Word, InputStringArray));
     }
@@ -54,7 +54,15 @@ namespace WordCounter.Tests
       Assert.AreEqual(0, testWordCounter.CountWordsTest(Word, InputStringArray));
     }
     [TestMethod]
-    public void IncorrectInputNumber_0()
+    public void PartialMatch_Zero()
+    {
+      string Word = "a";
+      string[] InputStringArray = new string[] {"an"};
+      WordCounter testWordCounter = new WordCounter();
+      Assert.AreEqual(0, testWordCounter.CountWordsTest(Word, InputStringArray));
+    }
+    [TestMethod]
+    public void IncorrectInputNumber_Zero()
     {
       string Word = "5";
       string[] InputStringArray = new string[] {"a"};
