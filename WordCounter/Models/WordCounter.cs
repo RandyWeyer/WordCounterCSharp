@@ -4,10 +4,25 @@ namespace WordCounter
 {
   public class WordCounter
   {
-    public string[] CountWordsTest(string[] InputStringArray)
+    public int CountWordsTest(string Word, string[] InputStringArray)
     {
-      string[] expectedString = {"a"};
-      return expectedString;
+      int WordCounter=0;
+      string LowerCaseWord = Word.ToLower();
+
+      if(Word != "")
+      {
+        for(var i=0; i < InputStringArray.Length; i++)
+        {
+          string LowerCaseStringArray = InputStringArray[i].ToLower();
+          if(LowerCaseStringArray.Contains(LowerCaseWord))
+          {
+            WordCounter++;
+          }
+        }
+        return WordCounter;
+      } else {
+        return WordCounter;
+      }
     }
 
 
