@@ -1,6 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WordCounter;
-namespace WordCounter.Tests
+using WordCounterApp;
+using WordCounterApp.Models;
+using System;
+
+namespace WordCounterApp.Tests
 {
   [TestClass]
   public class WordCounterTest
@@ -10,7 +13,7 @@ namespace WordCounter.Tests
     {
       string Word = "a";
       string[] InputStringArray = new string[] {"a"};
-      WordCounter testWordCounter = new WordCounter();
+      WordCounter testWordCounter = new WordCounter(Word, InputStringArray);
       Assert.AreEqual(1, testWordCounter.CountWords(Word, InputStringArray));
     }
     [TestMethod]
@@ -18,7 +21,7 @@ namespace WordCounter.Tests
     {
       string Word = "a";
       string[] InputStringArray = new string[] {"a", "I"};
-      WordCounter testWordCounter = new WordCounter();
+      WordCounter testWordCounter = new WordCounter(Word, InputStringArray);
       Assert.AreEqual(1, testWordCounter.CountWords(Word, InputStringArray));
     }
     [TestMethod]
@@ -26,7 +29,7 @@ namespace WordCounter.Tests
     {
       string Word = "in";
       string[] InputStringArray = new string[] {"an","in"};
-      WordCounter testWordCounter = new WordCounter();
+      WordCounter testWordCounter = new WordCounter(Word, InputStringArray);
       Assert.AreEqual(1, testWordCounter.CountWords(Word, InputStringArray));
     }
     [TestMethod]
@@ -34,7 +37,7 @@ namespace WordCounter.Tests
     {
       string Word = "i";
       string[] InputStringArray = new string[] {"a","I"};
-      WordCounter testWordCounter = new WordCounter();
+      WordCounter testWordCounter = new WordCounter(Word, InputStringArray);
       Assert.AreEqual(1, testWordCounter.CountWords(Word, InputStringArray));
     }
     [TestMethod]
@@ -42,7 +45,7 @@ namespace WordCounter.Tests
     {
       string Word = "iNSidE";
       string[] InputStringArray = new string[] {"a","inside"};
-      WordCounter testWordCounter = new WordCounter();
+      WordCounter testWordCounter = new WordCounter(Word, InputStringArray);
       Assert.AreEqual(1, testWordCounter.CountWords(Word, InputStringArray));
     }
     [TestMethod]
@@ -50,7 +53,7 @@ namespace WordCounter.Tests
     {
       string Word = "";
       string[] InputStringArray = new string[] {""};
-      WordCounter testWordCounter = new WordCounter();
+      WordCounter testWordCounter = new WordCounter(Word, InputStringArray);
       Assert.AreEqual(0, testWordCounter.CountWords(Word, InputStringArray));
     }
     [TestMethod]
@@ -58,7 +61,7 @@ namespace WordCounter.Tests
     {
       string Word = "a";
       string[] InputStringArray = new string[] {"an"};
-      WordCounter testWordCounter = new WordCounter();
+      WordCounter testWordCounter = new WordCounter(Word, InputStringArray);
       Assert.AreEqual(0, testWordCounter.CountWords(Word, InputStringArray));
     }
     [TestMethod]
@@ -66,7 +69,7 @@ namespace WordCounter.Tests
     {
       string Word = "outside";
       string[] InputStringArray = new string[] {"a","an","in","inside"};
-      WordCounter testWordCounter = new WordCounter();
+      WordCounter testWordCounter = new WordCounter(Word, InputStringArray);
       Assert.AreEqual(0, testWordCounter.CountWords(Word, InputStringArray));
     }
     [TestMethod]
@@ -74,7 +77,7 @@ namespace WordCounter.Tests
     {
       string Word = "5";
       string[] InputStringArray = new string[] {"a"};
-      WordCounter testWordCounter = new WordCounter();
+      WordCounter testWordCounter = new WordCounter(Word, InputStringArray);
       Assert.AreEqual(0, testWordCounter.CountWords(Word, InputStringArray));
     }
 

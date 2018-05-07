@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System;
-using WordCounterApp.Models;
+using WordCounterApp;
 
 namespace WordCounterApp.Models
 {
@@ -36,7 +36,7 @@ namespace WordCounterApp.Models
     public int CountWords(string Word, string[] InputStringArray)
     {
       int WordCounter=0;
-      string LowerCaseWord = Word.ToLower();
+      string LowerCaseWord = Word;
 
       if(Word != "")
       {

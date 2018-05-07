@@ -11,15 +11,15 @@
     <div class="container">
       <!-- <div class="row"> -->
         <h1>Word Counter</h1>
-        <form action='/submit' method="post">
+        <form action="/submit" method="post">
           <div class='col-md-6 form-group'>
-            <label for='word-input'>Input a Word</label>
-            <input id="word-input" type="text" maxlength="20">
+            <label for="word-input">Input a Word</label>
+            <input name="word-input" type="text" maxlength="20">
           </div>
 
           <div class='col-md-6 form-group'>
-            <label for='word-input'>Input a Word</label>
-            <input id="word-input" type="text" maxlength="20">
+            <label for="list-of-words">Input a Sentence</label>
+            <input name="list-of-words" type="text">
           </div>
 
           <button type='submit' class='btn btn-primary submit-button'>Count!</button>
@@ -28,7 +28,7 @@
     <div class="results">
       @if (@Model != null)
       {
-        @Model.GetWinStatement();
+        @Model;
       }
 
     </div>
